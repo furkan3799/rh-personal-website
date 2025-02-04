@@ -44,8 +44,7 @@ const Headermain = () => {
                       to="/portfolio"
                       className="my-3"
                     >
-                      {" "}
-                      Rezepte{" "}
+                      Rezepte
                     </Link>
                   </li>
                   <li className="menu_item">
@@ -55,7 +54,6 @@ const Headermain = () => {
                   </li>
                   <li className="menu_item">
                     <Link onClick={handleToggle} to="/contact" className="my-3">
-                      {" "}
                       Kontakt
                     </Link>
                   </li>

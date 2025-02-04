@@ -1,6 +1,6 @@
 import React from "react";
-import { Route, Routes} from "react-router-dom";
-import withRouter from "../hooks/withRouter"
+import { Route, Routes } from "react-router-dom";
+import withRouter from "../hooks/withRouter";
 import { Home } from "../pages/home";
 import { Portfolio } from "../pages/portfolio";
 import { ContactUs } from "../pages/contact";
@@ -24,6 +24,8 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/events" element={<Home />} />
+        <Route path="/recipes" element={<Home />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </CSSTransition>

@@ -25,6 +25,10 @@ section {
   text-decoration: none;
 }
 
+.mt-2 {
+  margin-top: 2rem;
+}
+
 .btn-about a {
   color: var(--text-color);
   text-decoration: none;

@@ -176,6 +176,30 @@ const socialprofils = {
   linkedin: "https://linkedin.com",
   twitter: "https://twitter.com",
 };
+
+export const recipes = [
+  {
+    id: 1,
+    title: "Apfelstrudel",
+    description:
+      "Klassischer österreichischer Apfelstrudel mit knusprigem Strudelteig",
+    image: "/path/to/apfelstrudel.jpg",
+    prepTime: 60,
+    difficulty: "Mittel",
+    ingredients: [
+      "6 Äpfel",
+      "100g Butter",
+      // ... more ingredients
+    ],
+    instructions: [
+      "Äpfel schälen und in dünne Scheiben schneiden",
+      "Strudelteig ausrollen",
+      // ... more instructions
+    ],
+  },
+  // ... more recipes
+];
+
 export {
   meta,
   dataabout,
