@@ -3,16 +3,74 @@ import "./style.css";
 import { Link } from "react-router-dom";
 
 const MobileRecipe = ({ recipe }) => {
+  const handleDelete = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (
+      window.confirm(
+        `Möchten Sie das Rezept "${recipe.title}" wirklich löschen?`
+      )
+    ) {
+      console.log("Deleting recipe:", recipe.id);
+    }
+  };
+
   return (
-    <Link to={`/recipe/${recipe.id}`} className="mobile-recipe">
-      <h3>{recipe.title}</h3>
-    </Link>
+    <div className="mobile-recipe">
+      <div className="recipe-actions">
+        <Link
+          to={`/edit-recipe/${recipe.id}`}
+          className="recipe-action-btn edit-btn"
+          title="Rezept bearbeiten"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <i className="fas fa-edit"></i>
+        </Link>
+        <button
+          onClick={handleDelete}
+          className="recipe-action-btn delete-btn"
+          title="Rezept löschen"
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+      <Link to={`/recipe/${recipe.id}`}>
+        <h3>{recipe.title}</h3>
+      </Link>
+    </div>
   );
 };
 
 const DesktopRecipe = ({ recipe }) => {
+  const handleDelete = (e) => {
+    e.preventDefault();
+    if (
+      window.confirm(
+        `Möchten Sie das Rezept "${recipe.title}" wirklich löschen?`
+      )
+    ) {
+      console.log("Deleting recipe:", recipe.id);
+    }
+  };
+
   return (
     <div className="recipe-card">
+      <div className="recipe-actions">
+        <Link
+          to={`/edit-recipe/${recipe.id}`}
+          className="recipe-action-btn edit-btn"
+          title="Rezept bearbeiten"
+        >
+          <i className="fas fa-edit"></i>
+        </Link>
+        <button
+          onClick={handleDelete}
+          className="recipe-action-btn delete-btn"
+          title="Rezept löschen"
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
       <div className="recipe-image">
         <img src={recipe.image} alt={recipe.title} />
       </div>

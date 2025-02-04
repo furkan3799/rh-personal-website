@@ -158,6 +158,11 @@
   text-decoration: none;
   border-bottom: 1px solid var(--text-color-2);
   background: transparent;
+  position: relative;
+}
+
+.mobile-recipe a {
+  text-decoration: none;
 }
 
 .mobile-recipe h3 {
@@ -167,4 +172,53 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding-right: 5rem; /* Make space for action buttons */
+}
+
+.recipe-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.recipe-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: var(--primary-color);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-action-btn:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-action-btn i {
+  font-size: 1rem;
+}
+
+/* Add hover effect to show buttons on mobile */
+@media (max-width: 768px) {
+  .recipe-action-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .recipe-actions {
+    top: 0.8rem;
+    right: 0.8rem;
+  }
 }
