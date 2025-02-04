@@ -2,42 +2,40 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { useParams, Link } from "react-router-dom";
-import { meta } from "../../content_option";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { meta, recipes } from "../../content_option";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export const RecipeDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const recipe = recipes.find((r) => r.id === id);
 
-  // This would typically come from your API or content_option.js
-  // For now, we'll use dummy data
-  const recipe = {
-    id: 1,
-    title: "Apfelstrudel",
-    description:
-      "Klassischer österreichischer Apfelstrudel mit knusprigem Strudelteig",
-    image:
-      "https://ayurveda-maharishi.net/wp-content/uploads/2023/03/ayurveda-food.jpg",
-    prepTime: 60,
-    difficulty: "Mittel",
-    ingredients: [
-      "4 große Äpfel",
-      "100g Butter",
-      "100g Zucker",
-      "1 TL Zimt",
-      "100g Rosinen",
-      "200g Strudelteig",
-    ],
-    instructions: [
-      "Äpfel schälen und in kleine Stücke schneiden",
-      "Butter schmelzen",
-      "Äpfel mit Zucker und Zimt mischen",
-      "Strudelteig ausrollen",
-      "Mit geschmolzener Butter bestreichen",
-      "Apfelmischung auf den Teig geben",
-      "Strudel einrollen",
-      "Bei 180°C für 30-35 Minuten backen",
-    ],
-  };
+  console.log("Recipe ID:", id);
+  console.log("Recipe Data:", recipe);
+
+  // Redirect if recipe not found
+  if (!recipe) {
+    console.log("Recipe not found, redirecting...");
+    navigate("/portfolio");
+    return null;
+  }
+
+  // Convert ingredients and instructions to markdown format
+  const markdownContent = `
+# Zutaten
+
+${recipe.ingredients.map((ingredient) => `- ${ingredient}`).join("\n")}
+
+# Zubereitung
+
+${recipe.instructions
+  .map((instruction, index) => `${index + 1}. ${instruction}`)
+  .join("\n")}
+
+${recipe.tips ? `\n# Tipps\n\n${recipe.tips}` : ""}
+`;
 
   return (
     <HelmetProvider>
@@ -59,39 +57,63 @@ export const RecipeDetail = () => {
         </Row>
 
         <Row className="recipe-detail">
-          <Col lg="6" className="recipe-detail-image">
+          <Col lg="12" className="recipe-detail-image">
             <img src={recipe.image} alt={recipe.title} />
           </Col>
 
-          <Col lg="6" className="recipe-detail-content">
-            <h1 className="recipe-title">{recipe.title}</h1>
-            <p className="recipe-description">{recipe.description}</p>
+          <Col lg="12" className="recipe-detail-content">
+            <div className="recipe-header">
+              <h1 className="recipe-title">{recipe.title}</h1>
+              <p className="recipe-description">{recipe.description}</p>
 
-            <div className="recipe-meta-detail">
-              <span className="prep-time">
-                <i className="far fa-clock"></i> {recipe.prepTime} min
-              </span>
-              <span className="difficulty">
-                <i className="fas fa-signal"></i> {recipe.difficulty}
-              </span>
+              <div className="recipe-meta-detail">
+                <span className="prep-time">
+                  <i className="far fa-clock"></i> {recipe.prepTime} min
+                </span>
+                <span className="difficulty">
+                  <i className="fas fa-signal"></i> {recipe.difficulty}
+                </span>
+                {recipe.category && (
+                  <span className="category">
+                    <i className="fas fa-tag"></i> {recipe.category}
+                  </span>
+                )}
+              </div>
+
+              {recipe.tags && (
+                <div className="recipe-tags">
+                  {recipe.tags.map((tag, index) => (
+                    <span key={index} className="recipe-tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
 
-            <div className="recipe-section">
-              <h2>Zutaten</h2>
-              <ul className="ingredients-list">
-                {recipe.ingredients.map((ingredient, index) => (
-                  <li key={index}>{ingredient}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="recipe-section">
-              <h2>Zubereitung</h2>
-              <ol className="instructions-list">
-                {recipe.instructions.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ol>
+            <div className="recipe-content-markdown">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="markdown-h1" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="markdown-h2" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="markdown-ul" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="markdown-ol" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="markdown-li" {...props} />
+                  ),
+                }}
+              >
+                {markdownContent}
+              </ReactMarkdown>
             </div>
           </Col>
         </Row>

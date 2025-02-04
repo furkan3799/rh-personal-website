@@ -179,25 +179,37 @@ const socialprofils = {
 
 export const recipes = [
   {
-    id: 1,
+    id: "apfelstrudel",
     title: "Apfelstrudel",
+    date: "2024-03-20",
     description:
       "Klassischer österreichischer Apfelstrudel mit knusprigem Strudelteig",
-    image: "/path/to/apfelstrudel.jpg",
+    image:
+      "https://ayurveda-maharishi.net/wp-content/uploads/2023/03/ayurveda-food.jpg",
     prepTime: 60,
     difficulty: "Mittel",
+    category: "Desserts",
+    tags: ["Österreichisch", "Traditionell", "Vegetarisch"],
     ingredients: [
-      "6 Äpfel",
+      "4 große Äpfel",
       "100g Butter",
-      // ... more ingredients
+      "100g Zucker",
+      "1 TL Zimt",
+      "100g Rosinen",
+      "200g Strudelteig",
     ],
     instructions: [
-      "Äpfel schälen und in dünne Scheiben schneiden",
+      "Äpfel schälen und in kleine Stücke schneiden",
+      "Butter schmelzen",
+      "Äpfel mit Zucker und Zimt mischen",
       "Strudelteig ausrollen",
-      // ... more instructions
+      "Mit geschmolzener Butter bestreichen",
+      "Apfelmischung auf den Teig geben",
+      "Strudel einrollen",
+      "Bei 180°C für 30-35 Minuten backen",
     ],
+    tips: "Der Strudel schmeckt am besten warm mit einer Kugel Vanilleeis serviert.",
   },
-  // ... more recipes
 ];
 
 export {
