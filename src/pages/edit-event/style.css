@@ -1,0 +1,105 @@
+.edit-event-container {
+  padding-top: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.edit-event-container form {
+  background: var(--bg-color);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.edit-event-container .form-label {
+  color: var(--text-color);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.edit-event-container .form-control,
+.edit-event-container .form-select {
+  background: var(--primary-color);
+  border: 1px solid var(--text-color-2);
+  color: var(--text-color);
+  padding: 0.8rem;
+}
+
+.edit-event-container .form-control:focus,
+.edit-event-container .form-select:focus {
+  background: var(--primary-color);
+  border-color: var(--secondary-color);
+  color: var(--text-color);
+  box-shadow: 0 0 0 0.2rem rgba(92, 204, 201, 0.25);
+}
+
+.edit-event-container textarea.form-control {
+  min-height: 100px;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.edit-event-button {
+  background: var(--secondary-color);
+  border: none;
+  color: var(--primary-color);
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.edit-event-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button {
+  background: var(--text-color-2);
+  border: none;
+  color: var(--primary-color);
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.cancel-button:hover {
+  background: var(--text-color-2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Placeholder styling */
+.edit-event-container .form-control::placeholder {
+  color: var(--text-color-2);
+  opacity: 0.7;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .edit-event-container form {
+    padding: 1rem;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .edit-event-container .form-control,
+  .edit-event-container .form-select {
+    padding: 0.6rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .edit-event-button,
+  .cancel-button {
+    width: 100%;
+    padding: 0.6rem;
+  }
+}

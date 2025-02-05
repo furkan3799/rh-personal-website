@@ -3,11 +3,44 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta, events } from "../../content_option";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Event = ({ event }) => {
+  const navigate = useNavigate();
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (
+      window.confirm(`Möchten Sie das Event "${event.title}" wirklich löschen?`)
+    ) {
+      console.log("Deleting event:", event.id);
+      // Here you would typically delete the event from your backend
+      alert("Event gelöscht!");
+      // Refresh the page or update the state
+      window.location.reload();
+    }
+  };
+
   return (
     <div className="event-card">
+      <div className="event-actions">
+        <Link
+          to={`/edit-event/${event.id}`}
+          className="event-action-btn edit-btn"
+          title="Event bearbeiten"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <i className="fas fa-edit"></i>
+        </Link>
+        <button
+          onClick={handleDelete}
+          className="event-action-btn delete-btn"
+          title="Event löschen"
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
       <div className="event-image">
         <img src={event.image} alt={event.title} />
       </div>
