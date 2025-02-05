@@ -212,6 +212,61 @@ export const recipes = [
   },
 ];
 
+export const events = [
+  {
+    id: "ayurveda-workshop-april",
+    title: "Ayurveda Kochworkshop",
+    date: "15. April 2024",
+    time: "14:00 - 18:00",
+    location: "Yoga Studio München",
+    description:
+      "Lernen Sie die Grundlagen der ayurvedischen Küche in diesem praktischen Workshop. Wir werden gemeinsam verschiedene Gerichte zubereiten und die wichtigsten Prinzipien der ayurvedischen Ernährung kennenlernen.",
+    image:
+      "https://ayurveda-maharishi.net/wp-content/uploads/2023/03/ayurveda-food.jpg",
+    price: "89€",
+    spots: "10 Plätze verfügbar",
+  },
+  {
+    id: "yoga-retreat-mai",
+    title: "Yoga & Meditation Retreat",
+    date: "1. Mai 2024",
+    time: "09:00 - 17:00",
+    location: "Wellness Center Stuttgart",
+    description:
+      "Ein Tag voller Entspannung mit Yoga, Meditation und gesundem Essen. Perfekt für alle, die eine Auszeit vom Alltag suchen und neue Energie tanken möchten.",
+    image:
+      "https://images.unsplash.com/photo-1545205597-3d9d02c29597?q=80&w=1000",
+    price: "120€",
+    spots: "8 Plätze verfügbar",
+  },
+  {
+    id: "meditation-workshop",
+    title: "Meditation & Achtsamkeit",
+    date: "20. Mai 2024",
+    time: "18:30 - 20:30",
+    location: "Online Workshop",
+    description:
+      "In diesem Online-Workshop lernen Sie die Grundlagen der Meditation und Achtsamkeit kennen. Ideal für Anfänger und Fortgeschrittene.",
+    image:
+      "https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?q=80&w=1000",
+    price: "45€",
+    spots: "Unbegrenzte Plätze",
+  },
+  {
+    id: "nutrition-seminar",
+    title: "Gesunde Ernährung Seminar",
+    date: "5. Juni 2024",
+    time: "10:00 - 16:00",
+    location: "Gesundheitszentrum Frankfurt",
+    description:
+      "Ein umfassendes Seminar über gesunde Ernährung, Nährstoffe und wie Sie Ihre Ernährung nachhaltig optimieren können.",
+    image:
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=1000",
+    price: "95€",
+    spots: "15 Plätze verfügbar",
+  },
+];
+
 export {
   meta,
   dataabout,

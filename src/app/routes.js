@@ -8,6 +8,7 @@ import { About } from "../pages/about";
 import { RecipeDetail } from "../pages/recipe";
 import { CreateRecipe } from "../pages/create-recipe";
 import { EditRecipe } from "../pages/edit-recipe";
+import { Events } from "../pages/events";
 import { Socialicons } from "../components/socialicons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -27,8 +28,8 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/about" element={<About />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/events" element={<Home />} />
-        <Route path="/recipes" element={<Home />} />
+        <Route path="/events" element={<Events />} />
+        <Route path="/recipes" element={<Portfolio />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
         <Route path="/create-recipe" element={<CreateRecipe />} />
         <Route path="/edit-recipe/:id" element={<EditRecipe />} />
