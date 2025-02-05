@@ -87,6 +87,10 @@
   gap: 0.8rem;
 }
 
+.recipe-content {
+  margin-top: 3rem;
+}
+
 .recipe-section {
   margin-bottom: 3rem;
 }
@@ -149,6 +153,18 @@
 .instructions-list li::marker {
   color: var(--secondary-color);
   font-weight: bold;
+}
+
+.recipe-tips {
+  color: var(--text-color);
+  line-height: 1.8;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--primary-color);
+  border-radius: 12px;
+  border-left: 4px solid var(--secondary-color);
 }
 
 /* Tablet */

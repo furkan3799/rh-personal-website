@@ -4,8 +4,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { meta, recipes } from "../../content_option";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 
 export const RecipeDetail = () => {
   const { id } = useParams();
@@ -21,21 +19,6 @@ export const RecipeDetail = () => {
     navigate("/portfolio");
     return null;
   }
-
-  // Convert ingredients and instructions to markdown format
-  const markdownContent = `
-# Zutaten
-
-${recipe.ingredients.map((ingredient) => `- ${ingredient}`).join("\n")}
-
-# Zubereitung
-
-${recipe.instructions
-  .map((instruction, index) => `${index + 1}. ${instruction}`)
-  .join("\n")}
-
-${recipe.tips ? `\n# Tipps\n\n${recipe.tips}` : ""}
-`;
 
   return (
     <HelmetProvider>
@@ -91,29 +74,31 @@ ${recipe.tips ? `\n# Tipps\n\n${recipe.tips}` : ""}
               )}
             </div>
 
-            <div className="recipe-content-markdown">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  h1: ({ node, ...props }) => (
-                    <h2 className="markdown-h1" {...props} />
-                  ),
-                  h2: ({ node, ...props }) => (
-                    <h3 className="markdown-h2" {...props} />
-                  ),
-                  ul: ({ node, ...props }) => (
-                    <ul className="markdown-ul" {...props} />
-                  ),
-                  ol: ({ node, ...props }) => (
-                    <ol className="markdown-ol" {...props} />
-                  ),
-                  li: ({ node, ...props }) => (
-                    <li className="markdown-li" {...props} />
-                  ),
-                }}
-              >
-                {markdownContent}
-              </ReactMarkdown>
+            <div className="recipe-content">
+              <div className="recipe-section">
+                <h2>Zutaten</h2>
+                <ul className="ingredients-list">
+                  {recipe.ingredients.map((ingredient, index) => (
+                    <li key={index}>{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="recipe-section">
+                <h2>Zubereitung</h2>
+                <ol className="instructions-list">
+                  {recipe.instructions.map((instruction, index) => (
+                    <li key={index}>{instruction}</li>
+                  ))}
+                </ol>
+              </div>
+
+              {recipe.tips && (
+                <div className="recipe-section">
+                  <h2>Tipps</h2>
+                  <p className="recipe-tips">{recipe.tips}</p>
+                </div>
+              )}
             </div>
           </Col>
         </Row>
