@@ -59,6 +59,13 @@ export const Events = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
+        <Row className="mb-4">
+          <Col>
+            <Link to="/create-event" className="create-event-link">
+              <i className="fas fa-plus"></i> Neues Event
+            </Link>
+          </Col>
+        </Row>
         <div className="events-grid">
           {events.map((event) => (
             <Event key={event.id} event={event} />
