@@ -171,10 +171,9 @@ const contactConfig = {
 };
 
 const socialprofils = {
-  github: "https://github.com",
-  facebook: "https://facebook.com",
-  linkedin: "https://linkedin.com",
-  twitter: "https://twitter.com",
+  facebook: "https://www.facebook.com/profile.php?id=100090448808284",
+  linkedin: "https://www.linkedin.com/in/robert-herzog-931403250/",
+  instagram: "https://www.instagram.com/robert.herzog.golf/",
 };
 
 export const recipes = [

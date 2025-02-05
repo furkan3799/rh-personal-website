@@ -11,6 +11,7 @@ import { EditRecipe } from "../pages/edit-recipe";
 import { Events } from "../pages/events";
 import { CreateEvent } from "../pages/create-event";
 import { EditEvent } from "../pages/edit-event";
+import { EventDetail } from "../pages/event";
 import { Socialicons } from "../components/socialicons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
@@ -33,6 +34,7 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/events" element={<Events />} />
         <Route path="/create-event" element={<CreateEvent />} />
         <Route path="/edit-event/:id" element={<EditEvent />} />
+        <Route path="/event/:id" element={<EventDetail />} />
         <Route path="/recipes" element={<Portfolio />} />
         <Route path="/recipe/:id" element={<RecipeDetail />} />
         <Route path="/create-recipe" element={<CreateRecipe />} />
