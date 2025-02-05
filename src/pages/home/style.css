@@ -102,6 +102,25 @@ section {
   position: relative;
 }
 
+.intro_btn-action {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.intro_btn-action .text_2 {
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .intro_btn-action {
+    grid-template-columns: 1fr;
+    max-width: 300px;
+  }
+}
+
 .ac_btn {
   padding: 4px 19px;
   color: var(--secondary-color);
@@ -111,7 +130,13 @@ section {
   transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
   cursor: pointer;
   border-radius: 0;
-  margin-right: 20px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  white-space: nowrap;
 }
 
 .ac_btn a {
