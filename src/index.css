@@ -8,6 +8,11 @@
   --overlay-color: rgb(255 255 255 / 70%);
 }
 
+/* Force scrollbar to always show to prevent layout shifts */
+html {
+  overflow-y: scroll;
+}
+
 html,
 body {
   height: 100%;

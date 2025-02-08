@@ -83,10 +83,6 @@ export const Home = () => {
                   src={robertMeditating}
                   alt="Robert meditating"
                 />
-                <Carousel.Caption>
-                  <h3>Yoga & Meditation</h3>
-                  <p>Finde deine innere Balance durch Yoga und Meditation</p>
-                </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
                 <img
@@ -94,13 +90,6 @@ export const Home = () => {
                   src={robertCooking}
                   alt="Robert cooking"
                 />
-                <Carousel.Caption>
-                  <h3>Ayurvedische Küche</h3>
-                  <p>
-                    Gesunde und ausgewogene Ernährung nach ayurvedischen
-                    Prinzipien
-                  </p>
-                </Carousel.Caption>
               </Carousel.Item>
               <Carousel.Item>
                 <img
@@ -108,12 +97,6 @@ export const Home = () => {
                   src={robertTent}
                   alt="Robert at an event"
                 />
-                <Carousel.Caption>
-                  <h3>Events & Workshops</h3>
-                  <p>
-                    Erlebe Ayurveda und Yoga in einer einzigartigen Atmosphäre
-                  </p>
-                </Carousel.Caption>
               </Carousel.Item>
             </Carousel>
           </div>
