@@ -1,0 +1,50 @@
+.sticky-contact-wrapper {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 2rem;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.sticky-contact-btn {
+  position: relative;
+  padding: 1rem 2rem;
+  background: var(--text-color);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  border: 2px solid var(--text-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+.sticky-contact-btn:hover {
+  transform: translateY(-5px);
+  color: var(--primary-color);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.sticky-contact-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .sticky-contact-wrapper {
+    padding: 1.5rem;
+  }
+
+  .sticky-contact-btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+}

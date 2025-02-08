@@ -5,6 +5,7 @@ import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
 import CookieConsent from "../components/CookieConsent";
+import { StickyContact } from "../components/StickyContact";
 import "./App.css";
 
 function _ScrollToTop(props) {
@@ -22,6 +23,7 @@ export default function App() {
       <ScrollToTop>
         <Headermain />
         <AppRoutes />
+        <StickyContact />
         <CookieConsent />
       </ScrollToTop>
     </Router>
