@@ -9,12 +9,12 @@
 }
 
 [data-theme="light"] {
-  --bg-color: #ffffff;
-  --primary-color: #ffffff;
+  --bg-color: #f5f5f7;
+  --primary-color: #f5f5f7;
   --secondary-color: #000;
-  --text-color: #000;
-  --text-color-2: #000;
-  --text-color-3: rgb(204, 0, 0);
+  --text-color: #174042;
+  --text-color-2: #174042;
+  --text-color-3: #174042;
   --overlay-color: rgb(255 255 255 / 70%);
 }
 

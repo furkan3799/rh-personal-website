@@ -14,8 +14,7 @@ const introdata = {
   },
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum",
-  your_img_url:
-    "https://lh5.googleusercontent.com/z7kkOS1zahA6AZ3GPK0kqLYrDQb_M8qPl-PQofy42LVXM4pl8HRcru3pGr8q66XcweOVqX0R0hLEdPP1HdoxfGlNJ2EwKQhlGeFYH1G0yVqzcZouiKhVAuLE3phAiX52=w1280",
+  your_img_url: require("./assets/images/robert_meditating.jpeg"),
 };
 
 const dataabout = {
