@@ -76,8 +76,8 @@ const DesktopRecipe = ({ recipe }) => {
       </div>
       <div className="recipe-content">
         <div className="recipe-text">
-          <h3>{recipe.title}</h3>
-          <p className="recipe-description">{recipe.description}</p>
+          <h3 style={{ marginTop: "-30px" }}>{recipe.title}</h3>
+          <p>{recipe.description}</p>
           <div className="recipe-meta">
             <span className="prep-time">
               <i className="far fa-clock"></i> {recipe.prepTime} min

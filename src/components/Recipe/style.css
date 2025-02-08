@@ -94,10 +94,12 @@
   flex-direction: column;
   justify-content: space-between;
   flex: 1;
+  text-align: left;
 }
 
 .recipe-text {
   flex: 1;
+  text-align: left;
 }
 
 .recipe-content h3 {
@@ -105,16 +107,6 @@
   color: var(--text-color);
   font-size: 1.5rem;
   line-height: 1.2;
-}
-
-.recipe-description {
-  color: var(--text-color-2);
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
 }
 
 .recipe-meta {
