@@ -8,6 +8,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -209,7 +210,6 @@
 .recipe-action-btn i {
   font-size: 1rem;
 }
-
 /* Add hover effect to show buttons on mobile */
 @media (max-width: 768px) {
   .recipe-action-btn {
