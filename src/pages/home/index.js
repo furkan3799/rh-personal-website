@@ -4,6 +4,10 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
+import { Carousel } from "react-bootstrap";
+import robertCooking from "../../assets/images/robert_cooking.jpeg";
+import robertTent from "../../assets/images/robert_tent.jpeg";
+import robertMeditating from "../../assets/images/robert_meditating.jpeg";
 
 export const Home = () => {
   return (
@@ -15,10 +19,6 @@ export const Home = () => {
           <meta name="description" content={meta.description} />
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center">
-          <div
-            className="h_bg-image order-1 order-lg-2 h-100"
-            style={{ backgroundImage: `url(${introdata.your_img_url})` }}
-          ></div>
           <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
             <div className="align-self-center">
               <div className="intro mx-auto">
@@ -74,6 +74,48 @@ export const Home = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="order-1 order-lg-2 h-100 home-carousel">
+            <Carousel fade interval={3000} pause={false} controls={false}>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={robertMeditating}
+                  alt="Robert meditating"
+                />
+                <Carousel.Caption>
+                  <h3>Yoga & Meditation</h3>
+                  <p>Finde deine innere Balance durch Yoga und Meditation</p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={robertCooking}
+                  alt="Robert cooking"
+                />
+                <Carousel.Caption>
+                  <h3>Ayurvedische Küche</h3>
+                  <p>
+                    Gesunde und ausgewogene Ernährung nach ayurvedischen
+                    Prinzipien
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={robertTent}
+                  alt="Robert at an event"
+                />
+                <Carousel.Caption>
+                  <h3>Events & Workshops</h3>
+                  <p>
+                    Erlebe Ayurveda und Yoga in einer einzigartigen Atmosphäre
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+            </Carousel>
           </div>
         </div>
       </section>
