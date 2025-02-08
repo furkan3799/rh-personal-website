@@ -129,8 +129,8 @@
 .recipe-button {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: var(--primary-color);
-  color: var(--text-color);
+  background: var(--text-color);
+  color: var(--primary-color);
   text-decoration: none;
   border-radius: 25px;
   position: relative;
@@ -141,7 +141,7 @@
 
 .recipe-button:hover {
   transform: translateY(-2px);
-  color: var(--text-color);
+  color: var(--primary-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
