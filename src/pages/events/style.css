@@ -9,7 +9,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--secondary-color);
+  background: var(--text-color);
   color: var(--primary-color);
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
@@ -60,14 +60,14 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  background: var(--primary-color);
-  color: var(--text-color);
+  background: var(--text-color);
+  color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-decoration: none;
 }
 
 .event-action-btn:hover {
-  background: var(--secondary-color);
+  background: var(--text-color);
   color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -156,7 +156,7 @@
 .event-button {
   display: inline-block;
   padding: 0.8rem 1.5rem;
-  background: var(--secondary-color);
+  background: var(--text-color);
   color: var(--primary-color);
   text-decoration: none;
   border-radius: 25px;
