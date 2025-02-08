@@ -1,4 +1,4 @@
-const logotext = "ROBERT";
+const logotext = "VITA AYUR READY";
 const meta = {
   title: "Robert Herzog",
   description:
