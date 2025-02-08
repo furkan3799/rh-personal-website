@@ -47,7 +47,7 @@ export const Home = () => {
           <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
             <div className="align-self-center">
               <div className="intro mx-auto">
-                <div className="d-none d-lg-block">
+                <div className="d-lg-block">
                   <h2 className="mb-1x">{introdata.title}</h2>
                   <h1 className="fluidz-48 mb-1x">
                     <Typewriter
@@ -63,7 +63,9 @@ export const Home = () => {
                       }}
                     />
                   </h1>
-                  <p className="mb-1x">{introdata.description}</p>
+                  <p className="mb-1x d-none d-lg-block">
+                    {introdata.description}
+                  </p>
                 </div>
                 <div className="intro_btn-action pb-5">
                   <Link to="/contact" className="text_2">

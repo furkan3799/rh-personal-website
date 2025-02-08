@@ -307,6 +307,22 @@ section {
     min-height: 400px;
     margin: 0;
   }
+
+  .intro_sec .intro {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .intro_sec .text h1,
+  .intro_sec .text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .fluidz-48 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
 }
 
 .home-carousel .carousel,
@@ -315,11 +331,16 @@ section {
   height: 100%;
 }
 
+.home-carousel .carousel-item {
+  background-color: var(--primary-color);
+}
+
 .home-carousel .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  aspect-ratio: 4/3;
 }
 
 .home-carousel .carousel-caption {
@@ -377,11 +398,23 @@ section {
   .home-carousel {
     height: 40vh;
     min-height: 300px;
-    margin: 0;
+  }
+
+  .home-carousel .carousel-item img {
+    aspect-ratio: 1/1;
   }
 
   .intro_sec .intro {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
+  }
+
+  .intro_sec .text h1,
+  .intro_sec .text h2 {
+    font-size: 1.2rem;
+  }
+
+  .fluidz-48 {
+    font-size: 1rem;
   }
 
   .intro_btn-action {
