@@ -4,6 +4,7 @@ import { BrowserRouter as Router, useLocation } from "react-router-dom";
 import withRouter from "../hooks/withRouter";
 import AppRoutes from "./routes";
 import Headermain from "../header";
+import CookieConsent from "../components/CookieConsent";
 import "./App.css";
 
 function _ScrollToTop(props) {
@@ -21,6 +22,7 @@ export default function App() {
       <ScrollToTop>
         <Headermain />
         <AppRoutes />
+        <CookieConsent />
       </ScrollToTop>
     </Router>
   );
