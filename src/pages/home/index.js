@@ -5,6 +5,7 @@ import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
+import { FaEnvelope } from "react-icons/fa";
 import robertCooking from "../../assets/images/robert_cooking.jpeg";
 import robertTent from "../../assets/images/robert_tent.jpeg";
 import robertMeditating from "../../assets/images/robert_meditating.jpeg";
@@ -70,7 +71,7 @@ export const Home = () => {
                 <div className="intro_btn-action pb-5">
                   <Link to="/contact" className="text_2">
                     <div id="button_h" className="ac_btn btn">
-                      Kontaktier Mich!
+                      <span className="d-lg-inline">Kontaktier Mich!</span>
                       <div className="ring one"></div>
                       <div className="ring two"></div>
                       <div className="ring three"></div>

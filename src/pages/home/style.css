@@ -421,3 +421,26 @@ section {
     padding: 0 1rem 2rem 1rem;
   }
 }
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .ac_btn {
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .ac_btn .contact-icon {
+    font-size: 1.2rem;
+  }
+
+  #button_h .contact-icon {
+    color: var(--text-color);
+  }
+
+  #button_h:hover .contact-icon {
+    color: var(--primary-color);
+  }
+}

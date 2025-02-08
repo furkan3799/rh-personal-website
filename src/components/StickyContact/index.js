@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaEnvelope } from "react-icons/fa";
 import "./style.css";
 
 export const StickyContact = () => {
@@ -13,7 +14,8 @@ export const StickyContact = () => {
   return (
     <div className="sticky-contact-wrapper">
       <Link to="/contact" className="sticky-contact-btn">
-        <span>Kontaktier Mich!</span>
+        <span className="d-none d-lg-inline">Kontaktier Mich!</span>
+        <FaEnvelope className="d-lg-none contact-icon" />
       </Link>
     </div>
   );
