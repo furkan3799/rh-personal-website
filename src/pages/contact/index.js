@@ -72,49 +72,27 @@ export const ContactUs = () => {
           <title>{meta.title} | Kontakt</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3">
+        <Row>
           <Col lg="8">
             <h1 className="display-4 mb-4">Kontakt</h1>
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
         <Row className="sec_sp">
-          <Col lg="12">
-            <Alert
-              //show={formData.show}
-              variant={formData.variant}
-              className={`rounded-0 co_alert ${
-                formData.show ? "d-block" : "d-none"
-              }`}
-              onClose={() => setFormdata({ show: false })}
-              dismissible
-            >
-              <p className="my-0">{formData.alertmessage}</p>
-            </Alert>
-          </Col>
-          <Col lg="5" className="mb-5">
+          <Col lg="5">
             <h3 className="color_sec py-4">Kontaktiere Mich</h3>
             <address>
               <strong>Email:</strong>{" "}
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
                 {contactConfig.YOUR_EMAIL}
               </a>
-              <br />
-              <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Telefon:</strong> {contactConfig.YOUR_FONE}
-                </p>
-              ) : (
-                ""
-              )}
             </address>
             <p>{contactConfig.description}</p>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
-            <form onSubmit={handleSubmit} className="contact__form w-100">
+            <form className="contact__form w-100" onSubmit={handleSubmit}>
               <Row>
-                <Col lg="6" className="form-group">
+                <Col lg="12" className="form-group">
                   <input
                     className="form-control"
                     id="name"
@@ -126,7 +104,7 @@ export const ContactUs = () => {
                     onChange={handleChange}
                   />
                 </Col>
-                <Col lg="6" className="form-group">
+                <Col lg="12" className="form-group">
                   <input
                     className="form-control rounded-0"
                     id="email"
@@ -153,7 +131,7 @@ export const ContactUs = () => {
               <Row>
                 <Col lg="12" className="form-group">
                   <button className="btn ac_btn" type="submit">
-                    {formData.loading ? "Wird gesendet..." : "Senden"}
+                    {formData.loading ? "Sending..." : "Senden"}
                   </button>
                 </Col>
               </Row>
