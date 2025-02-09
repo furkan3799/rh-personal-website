@@ -9,6 +9,7 @@
   /* Light theme scrollbar */
   --scrollbar-thumb: #174042;
   --scrollbar-track: #f5f5f7;
+  --border-color: #f5f5f7;
 }
 
 [data-theme="dark"] {
@@ -23,6 +24,7 @@
   /* Dark theme scrollbar */
   --scrollbar-thumb: #f5f5f7;
   --scrollbar-track: #174042;
+  --border-color: #5f6e6f;
 }
 
 /* Force scrollbar to always show to prevent layout shifts */
