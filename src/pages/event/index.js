@@ -4,11 +4,24 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { meta, events } from "../../content_option";
+import authService from "../../services/auth.service";
 
 export const EventDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const event = events.find((e) => e.id === id);
+  const isAuthenticated = authService.isAuthenticated();
+
+  const handleDelete = () => {
+    if (
+      window.confirm(`Möchten Sie das Event "${event.title}" wirklich löschen?`)
+    ) {
+      console.log("Deleting event:", event.id);
+      // Here you would typically delete the event from your backend
+      alert("Event gelöscht!");
+      navigate("/events");
+    }
+  };
 
   // Redirect if event not found
   if (!event) {
@@ -44,6 +57,22 @@ export const EventDetail = () => {
           <Col lg="12" className="event-detail-content">
             <div className="event-header">
               <h1 className="event-title">{event.title}</h1>
+              {isAuthenticated && (
+                <div className="event-actions-detail">
+                  <Link
+                    to={`/edit-event/${event.id}`}
+                    className="edit-event-button"
+                  >
+                    <i className="fas fa-edit"></i> Bearbeiten
+                  </Link>
+                  <button
+                    onClick={handleDelete}
+                    className="delete-event-button"
+                  >
+                    <i className="fas fa-trash-alt"></i> Löschen
+                  </button>
+                </div>
+              )}
               <p className="event-description">{event.description}</p>
 
               <div className="event-meta-detail">
@@ -56,49 +85,12 @@ export const EventDetail = () => {
                 <span className="event-location">
                   <i className="fas fa-map-marker-alt"></i> {event.location}
                 </span>
-              </div>
-
-              <div className="event-info">
-                <div className="event-price-detail">
-                  <i className="fas fa-ticket-alt"></i>
-                  <div>
-                    <h3>Preis</h3>
-                    <p>{event.price}</p>
-                  </div>
-                </div>
-
-                <div className="event-spots-detail">
-                  <i className="fas fa-users"></i>
-                  <div>
-                    <h3>Verfügbarkeit</h3>
-                    <p>{event.spots}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="event-actions-detail">
-                <Link
-                  to={`/edit-event/${event.id}`}
-                  className="edit-event-button"
-                >
-                  <i className="fas fa-edit"></i> Event bearbeiten
-                </Link>
-                <button
-                  onClick={() => {
-                    if (
-                      window.confirm(
-                        `Möchten Sie das Event "${event.title}" wirklich löschen?`
-                      )
-                    ) {
-                      console.log("Deleting event:", event.id);
-                      alert("Event gelöscht!");
-                      navigate("/events");
-                    }
-                  }}
-                  className="delete-event-button"
-                >
-                  <i className="fas fa-trash-alt"></i> Event löschen
-                </button>
+                <span className="event-price">
+                  <i className="fas fa-ticket-alt"></i> {event.price}
+                </span>
+                <span className="event-spots">
+                  <i className="fas fa-users"></i> {event.spots}
+                </span>
               </div>
             </div>
           </Col>

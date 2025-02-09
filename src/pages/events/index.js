@@ -4,9 +4,11 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta, events } from "../../content_option";
 import { Link, useNavigate } from "react-router-dom";
+import authService from "../../services/auth.service";
 
 const Event = ({ event }) => {
   const navigate = useNavigate();
+  const isAuthenticated = authService.isAuthenticated();
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -24,23 +26,25 @@ const Event = ({ event }) => {
 
   return (
     <div className="event-card">
-      <div className="event-actions">
-        <Link
-          to={`/edit-event/${event.id}`}
-          className="event-action-btn edit-btn"
-          title="Event bearbeiten"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <i className="fas fa-edit"></i>
-        </Link>
-        <button
-          onClick={handleDelete}
-          className="event-action-btn delete-btn"
-          title="Event löschen"
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
-      </div>
+      {isAuthenticated && (
+        <div className="event-actions">
+          <Link
+            to={`/edit-event/${event.id}`}
+            className="event-action-btn edit-btn"
+            title="Event bearbeiten"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <i className="fas fa-edit"></i>
+          </Link>
+          <button
+            onClick={handleDelete}
+            className="event-action-btn delete-btn"
+            title="Event löschen"
+          >
+            <i className="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      )}
       <div className="event-image">
         <img src={event.image} alt={event.title} />
       </div>
@@ -78,6 +82,8 @@ const Event = ({ event }) => {
 };
 
 export const Events = () => {
+  const isAuthenticated = authService.isAuthenticated();
+
   return (
     <HelmetProvider>
       <Container className="About-header">
@@ -92,13 +98,15 @@ export const Events = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
-        <Row className="mb-4">
-          <Col>
-            <Link to="/create-event" className="create-event-link">
-              <i className="fas fa-plus"></i> Neues Event
-            </Link>
-          </Col>
-        </Row>
+        {isAuthenticated && (
+          <Row className="mb-4">
+            <Col>
+              <Link to="/create-event" className="create-event-link">
+                <i className="fas fa-plus"></i> Neues Event
+              </Link>
+            </Col>
+          </Row>
+        )}
         <div className="events-grid">
           {events.map((event) => (
             <Event key={event.id} event={event} />

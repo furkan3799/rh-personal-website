@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import authService from "../../services/auth.service";
 
 const MobileRecipe = ({ recipe }) => {
+  const isAuthenticated = authService.isAuthenticated();
+
   const handleDelete = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -17,23 +20,25 @@ const MobileRecipe = ({ recipe }) => {
 
   return (
     <div className="mobile-recipe">
-      <div className="recipe-actions">
-        <Link
-          to={`/edit-recipe/${recipe.id}`}
-          className="recipe-action-btn edit-btn"
-          title="Rezept bearbeiten"
-          onClick={(e) => e.stopPropagation()}
-        >
-          <i className="fas fa-edit"></i>
-        </Link>
-        <button
-          onClick={handleDelete}
-          className="recipe-action-btn delete-btn"
-          title="Rezept löschen"
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
-      </div>
+      {isAuthenticated && (
+        <div className="recipe-actions">
+          <Link
+            to={`/edit-recipe/${recipe.id}`}
+            className="recipe-action-btn edit-btn"
+            title="Rezept bearbeiten"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <i className="fas fa-edit"></i>
+          </Link>
+          <button
+            onClick={handleDelete}
+            className="recipe-action-btn delete-btn"
+            title="Rezept löschen"
+          >
+            <i className="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      )}
       <Link to={`/recipe/${recipe.id}`}>
         <h3>{recipe.title}</h3>
       </Link>
@@ -42,6 +47,8 @@ const MobileRecipe = ({ recipe }) => {
 };
 
 const DesktopRecipe = ({ recipe }) => {
+  const isAuthenticated = authService.isAuthenticated();
+
   const handleDelete = (e) => {
     e.preventDefault();
     if (
@@ -55,28 +62,32 @@ const DesktopRecipe = ({ recipe }) => {
 
   return (
     <div className="recipe-card">
-      <div className="recipe-actions">
-        <Link
-          to={`/edit-recipe/${recipe.id}`}
-          className="recipe-action-btn edit-btn"
-          title="Rezept bearbeiten"
-        >
-          <i className="fas fa-edit"></i>
-        </Link>
-        <button
-          onClick={handleDelete}
-          className="recipe-action-btn delete-btn"
-          title="Rezept löschen"
-        >
-          <i className="fas fa-trash-alt"></i>
-        </button>
-      </div>
+      {isAuthenticated && (
+        <div className="recipe-actions">
+          <Link
+            to={`/edit-recipe/${recipe.id}`}
+            className="recipe-action-btn edit-btn"
+            title="Rezept bearbeiten"
+          >
+            <i className="fas fa-edit"></i>
+          </Link>
+          <button
+            onClick={handleDelete}
+            className="recipe-action-btn delete-btn"
+            title="Rezept löschen"
+          >
+            <i className="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      )}
       <div className="recipe-image">
         <img src={recipe.image} alt={recipe.title} />
       </div>
       <div className="recipe-content">
         <div className="recipe-text">
-          <h3 style={{ marginTop: "-30px" }}>{recipe.title}</h3>
+          <h3 style={{ marginTop: isAuthenticated ? "-30px" : "0" }}>
+            {recipe.title}
+          </h3>
           <p>{recipe.description}</p>
           <div className="recipe-meta">
             <span className="prep-time">

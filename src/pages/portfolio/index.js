@@ -5,8 +5,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import { meta, recipes } from "../../content_option";
 import Recipe from "../../components/Recipe";
 import { Link } from "react-router-dom";
+import authService from "../../services/auth.service";
 
 export const Portfolio = () => {
+  const isAuthenticated = authService.isAuthenticated();
   console.log("Loaded recipes:", recipes);
 
   return (
@@ -21,9 +23,11 @@ export const Portfolio = () => {
           <Col lg="12">
             <h1 className="display-4 mb-4">Rezepte</h1>
             <hr className="t_border my-4 ml-0 text-left" />
-            <Link to="/create-recipe" className="create-recipe-link">
-              <i className="fas fa-plus"></i> Neues Rezept
-            </Link>
+            {isAuthenticated && (
+              <Link to="/create-recipe" className="create-recipe-link">
+                <i className="fas fa-plus"></i> Neues Rezept
+              </Link>
+            )}
           </Col>
         </Row>
         <div className="recipes-grid">
