@@ -27,6 +27,12 @@
   --border-color: #5f6e6f;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 /* Force scrollbar to always show to prevent layout shifts */
 html {
   overflow-y: scroll;

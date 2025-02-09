@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { meta } from "../../content_option";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "../../components/CustomButton";
 
 export const CreateRecipe = () => {
   const navigate = useNavigate();
@@ -193,10 +194,16 @@ export const CreateRecipe = () => {
                 />
               </Form.Group>
 
-              <div className="mt-5">
-                <Button type="submit" className="create-recipe-button">
+              <div className="mt-5 row">
+                <CustomButton onClick={handleSubmit} variant="primary">
                   Rezept erstellen
-                </Button>
+                </CustomButton>
+                <CustomButton
+                  onClick={() => navigate("/portfolio")}
+                  className="ms-3"
+                >
+                  Abbrechen
+                </CustomButton>
               </div>
             </Form>
           </Col>
