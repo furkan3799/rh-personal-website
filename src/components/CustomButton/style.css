@@ -69,16 +69,17 @@
 
 .button_h:hover {
   color: var(--primary-color);
+  background: var(--text-color);
 }
 
-/* Add styles for primary button hover */
-.button_p:hover {
+/* Button hover styles */
+.button_h:hover {
   color: var(--primary-color);
+  background: var(--text-color);
 }
 
-/* Ensure text is visible on hover for both variants */
-.ac_btn:hover,
-.ac_btn:hover * {
+.button_p:hover {
+  background: var(--text-color);
   color: var(--primary-color);
 }
 

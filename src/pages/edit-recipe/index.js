@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { meta, recipes } from "../../content_option";
 import { useNavigate, useParams } from "react-router-dom";
+import CustomButton from "../../components/CustomButton";
 
 export const EditRecipe = () => {
   const navigate = useNavigate();
@@ -207,16 +208,12 @@ export const EditRecipe = () => {
               </Form.Group>
 
               <div className="mt-5 button-group">
-                <Button type="submit" className="edit-recipe-button">
+                <CustomButton onClick={handleSubmit} variant="primary">
                   Rezept aktualisieren
-                </Button>
-                <Button
-                  type="button"
-                  className="cancel-button"
-                  onClick={() => navigate("/portfolio")}
-                >
+                </CustomButton>
+                <CustomButton onClick={() => navigate("/portfolio")}>
                   Abbrechen
-                </Button>
+                </CustomButton>
               </div>
             </Form>
           </Col>
