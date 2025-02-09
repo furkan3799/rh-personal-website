@@ -5,6 +5,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import { meta, events } from "../../content_option";
 import { Link, useNavigate } from "react-router-dom";
 import authService from "../../services/auth.service";
+import CustomButton from "../../components/CustomButton";
 
 const Event = ({ event }) => {
   const navigate = useNavigate();
@@ -70,12 +71,7 @@ const Event = ({ event }) => {
             <i className="fas fa-users"></i> {event.spots}
           </div>
         </div>
-        <Link to={`/event/${event.id}`} className="event-button">
-          Mehr Info
-          <div className="ring one"></div>
-          <div className="ring two"></div>
-          <div className="ring three"></div>
-        </Link>
+        <CustomButton to={`/event/${event.id}`}>Mehr Info</CustomButton>
       </div>
     </div>
   );
@@ -101,9 +97,9 @@ export const Events = () => {
         {isAuthenticated && (
           <Row className="mb-4">
             <Col>
-              <Link to="/create-event" className="create-event-link">
+              <CustomButton to="/create-event" variant="primary">
                 <i className="fas fa-plus"></i> Neues Event
-              </Link>
+              </CustomButton>
             </Col>
           </Row>
         )}

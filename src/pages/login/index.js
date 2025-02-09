@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Container, Row, Col, Form, Button, Alert } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import authService from "../../services/auth.service";
 import { meta } from "../../content_option";
+import CustomButton from "../../components/CustomButton";
 import "./style.css";
 
 export const Login = () => {
@@ -55,11 +56,7 @@ export const Login = () => {
 
         <Row className="sec_sp">
           <Col lg="5" className="mb-5">
-            {error && (
-              <Alert variant="danger" className="mb-4">
-                {error}
-              </Alert>
-            )}
+            {error && <div className="alert alert-danger mb-4">{error}</div>}
 
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-4">
@@ -84,13 +81,13 @@ export const Login = () => {
                 />
               </Form.Group>
 
-              <Button
-                className="btn ac_btn login-btn"
-                type="submit"
+              <CustomButton
+                onClick={handleSubmit}
+                variant="primary"
                 disabled={loading}
               >
                 {loading ? "Wird geladen..." : "Anmelden"}
-              </Button>
+              </CustomButton>
             </Form>
           </Col>
         </Row>

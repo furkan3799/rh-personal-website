@@ -2,9 +2,10 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { meta, events } from "../../content_option";
 import authService from "../../services/auth.service";
+import CustomButton from "../../components/CustomButton";
 
 export const EventDetail = () => {
   const { id } = useParams();
@@ -43,9 +44,7 @@ export const EventDetail = () => {
 
         <Row className="mb-5 mt-3">
           <Col lg="12">
-            <Link to="/events" className="back-button">
-              ← Zurück zu den Events
-            </Link>
+            <CustomButton to="/events">← Zurück zu den Events</CustomButton>
           </Col>
         </Row>
 
@@ -59,18 +58,12 @@ export const EventDetail = () => {
               <h1 className="event-title">{event.title}</h1>
               {isAuthenticated && (
                 <div className="event-actions-detail">
-                  <Link
-                    to={`/edit-event/${event.id}`}
-                    className="edit-event-button"
-                  >
+                  <CustomButton to={`/edit-event/${event.id}`}>
                     <i className="fas fa-edit"></i> Bearbeiten
-                  </Link>
-                  <button
-                    onClick={handleDelete}
-                    className="delete-event-button"
-                  >
+                  </CustomButton>
+                  <CustomButton onClick={handleDelete} variant="primary">
                     <i className="fas fa-trash-alt"></i> Löschen
-                  </button>
+                  </CustomButton>
                 </div>
               )}
               <p className="event-description">{event.description}</p>

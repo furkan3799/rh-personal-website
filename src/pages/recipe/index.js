@@ -2,8 +2,9 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { meta, recipes } from "../../content_option";
+import CustomButton from "../../components/CustomButton";
 
 export const RecipeDetail = () => {
   const { id } = useParams();
@@ -33,9 +34,9 @@ export const RecipeDetail = () => {
 
         <Row className="mb-5 mt-3">
           <Col lg="12">
-            <Link to="/portfolio" className="back-button">
+            <CustomButton to="/portfolio" className="mb-4">
               ← Zurück zu den Rezepten
-            </Link>
+            </CustomButton>
           </Col>
         </Row>
 

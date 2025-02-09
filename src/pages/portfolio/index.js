@@ -4,7 +4,7 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta, recipes } from "../../content_option";
 import Recipe from "../../components/Recipe";
-import { Link } from "react-router-dom";
+import CustomButton from "../../components/CustomButton";
 import authService from "../../services/auth.service";
 
 export const Portfolio = () => {
@@ -24,9 +24,9 @@ export const Portfolio = () => {
             <h1 className="display-4 mb-4">Rezepte</h1>
             <hr className="t_border my-4 ml-0 text-left" />
             {isAuthenticated && (
-              <Link to="/create-recipe" className="create-recipe-link">
+              <CustomButton to="/create-recipe" variant="primary">
                 <i className="fas fa-plus"></i> Neues Rezept
-              </Link>
+              </CustomButton>
             )}
           </Col>
         </Row>
