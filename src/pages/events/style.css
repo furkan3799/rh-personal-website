@@ -58,19 +58,19 @@
   width: 36px;
   height: 36px;
   display: flex;
-  align-items: left;
-  justify-content: left;
+  align-items: center;
+  justify-content: center;
   border: var(--text-color) 2px solid;
   cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s ease;
   background: transparent;
   color: var(--text-color);
   border-radius: 0;
+  padding: 0;
 }
 
 .event-action-btn:hover {
-  box-shadow: 4px 4px 0px var(--text-color), -4px -4px 0px var(--text-color);
-  background: transparent;
+  background: var(--text-color);
   color: var(--primary-color);
 }
 
@@ -281,5 +281,15 @@
   .event-button {
     width: fit-content;
     padding: 4px 19px;
+  }
+
+  .event-action-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .event-actions {
+    top: 0.8rem;
+    right: 0.8rem;
   }
 }

@@ -82,13 +82,13 @@
   color: var(--primary-color);
 }
 
-/* Mobile styles */
+/* Mobile styles - only for intro section buttons */
 @media (max-width: 768px) {
-  .intro_btn-action .ac_btn {
+  .intro_btn-action .text_2 {
     width: 100%;
   }
 
-  .intro_btn-action .text_2 {
+  .intro_btn-action .ac_btn {
     width: 100%;
   }
 }

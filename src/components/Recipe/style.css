@@ -251,30 +251,23 @@
   justify-content: center;
   border: var(--text-color) 2px solid;
   cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.3s ease;
   background: transparent;
   color: var(--text-color);
   border-radius: 0;
+  padding: 0;
 }
 
 .recipe-action-btn:hover {
-  box-shadow: 4px 4px 0px var(--text-color), -4px -4px 0px var(--text-color);
-  background: transparent;
+  background: var(--text-color);
   color: var(--primary-color);
-}
-
-.recipe-action-btn.edit-btn {
-  background: transparent;
-}
-
-.recipe-action-btn.delete-btn {
-  background: transparent;
 }
 
 .recipe-action-btn i {
   font-size: 1rem;
 }
-/* Add hover effect to show buttons on mobile */
+
+/* Mobile styles */
 @media (max-width: 768px) {
   .recipe-action-btn {
     width: 32px;
