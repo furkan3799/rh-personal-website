@@ -11,7 +11,7 @@
   background: var(--text-color);
   color: var(--primary-color);
   padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  border-radius: 21.5r;
   text-decoration: none;
   transition: all 0.3s ease;
   margin-bottom: 2rem;
@@ -169,6 +169,7 @@
 @media (max-width: 768px) {
   .event-detail-container {
     padding-top: 1rem;
+    padding-right: 1.5rem;
   }
 
   .event-detail {
