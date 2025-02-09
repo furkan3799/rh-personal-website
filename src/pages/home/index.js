@@ -6,6 +6,7 @@ import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import { FaEnvelope } from "react-icons/fa";
+import CustomButton from "../../components/CustomButton";
 import robertCooking from "../../assets/images/robert_cooking.jpeg";
 import robertTent from "../../assets/images/robert_tent.jpeg";
 import robertMeditating from "../../assets/images/robert_meditating.jpeg";
@@ -69,38 +70,16 @@ export const Home = () => {
                   </p>
                 </div>
                 <div className="intro_btn-action pb-5">
-                  <Link to="/contact" className="text_2">
-                    <div id="button_h" className="ac_btn btn">
-                      <span className="d-lg-inline">Kontaktier Mich!</span>
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                  <Link to="/about" className="text_2">
-                    <div id="button_p" className="ac_btn btn">
-                      Über mich
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                  <Link to="/portfolio" className="text_2">
-                    <div id="button_h" className="ac_btn btn">
-                      Rezepte
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                  <Link to="/events" className="text_2">
-                    <div id="button_p" className="ac_btn btn">
-                      Events
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
+                  <CustomButton to="/contact">
+                    <span className="d-lg-inline">Kontaktier Mich!</span>
+                  </CustomButton>
+                  <CustomButton to="/about" variant="primary">
+                    Über mich
+                  </CustomButton>
+                  <CustomButton to="/portfolio">Rezepte</CustomButton>
+                  <CustomButton to="/events" variant="primary">
+                    Events
+                  </CustomButton>
                 </div>
               </div>
             </div>

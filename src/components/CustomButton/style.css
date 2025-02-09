@@ -81,3 +81,14 @@
 .ac_btn:hover * {
   color: var(--primary-color);
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .intro_btn-action .ac_btn {
+    width: 100%;
+  }
+
+  .intro_btn-action .text_2 {
+    width: 100%;
+  }
+}
