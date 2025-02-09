@@ -18,7 +18,7 @@
   font-weight: 500;
 }
 
-.btn.ac_btn {
+.login-btn.ac_btn {
   background: var(--text-color);
   color: var(--primary-color);
   padding: 0.8rem 2.2rem;
@@ -28,7 +28,7 @@
   border-radius: 25px;
 }
 
-.btn.ac_btn:hover {
+.login-btn.ac_btn:hover {
   background: var(--secondary-color);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);

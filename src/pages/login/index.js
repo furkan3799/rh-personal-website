@@ -84,7 +84,11 @@ export const Login = () => {
                 />
               </Form.Group>
 
-              <Button className="btn ac_btn" type="submit" disabled={loading}>
+              <Button
+                className="btn ac_btn login-btn"
+                type="submit"
+                disabled={loading}
+              >
                 {loading ? "Wird geladen..." : "Anmelden"}
               </Button>
             </Form>
