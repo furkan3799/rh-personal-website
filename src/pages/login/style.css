@@ -1,0 +1,29 @@
+.form-control {
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.8rem;
+  font-size: 1rem;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: var(--secondary-color);
+  color: var(--text-color);
+  box-shadow: none;
+}
+
+.form-label {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.btn.ac_btn {
+  padding: 0.8rem 2.2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn.ac_btn:hover {
+  background-color: var(--secondary-color);
+}
