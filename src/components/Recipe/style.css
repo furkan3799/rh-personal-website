@@ -127,40 +127,86 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--text-color);
-  color: var(--primary-color);
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  color: var(--text-color);
   position: relative;
+  border: var(--text-color) 2px solid;
   overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  cursor: pointer;
+  border-radius: 0;
+  padding: 4px 19px;
+  text-decoration: none;
+  height: 45px;
+  background: transparent;
 }
 
 .recipe-button:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
+  box-shadow: 8px 8px 0px var(--text-color), -8px -8px 0px var(--text-color);
+  background: transparent;
   color: var(--primary-color);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-button .ring {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: transparent;
+  top: 0;
+  left: 0;
+  transform: translate3d(0px, 90px, 0px);
+}
+
+.recipe-button .one {
+  background-color: var(--text-color);
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -3;
+}
+
+.recipe-button .two {
+  background-color: var(--text-color);
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -3;
+}
+
+.recipe-button .three {
+  background-color: var(--text-color);
+  transition: all 0.7s cubic-bezier(0.55, 0, 0.1, 1);
+  z-index: -3;
+}
+
+.recipe-button:hover .one {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.recipe-button:hover .two {
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.recipe-button:hover .three {
+  transform: translate3d(0px, 0px, 0px);
 }
 
 .create-recipe-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--text-color);
   color: var(--primary-color);
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
+  position: relative;
+  border: var(--text-color) 2px solid;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  cursor: pointer;
+  border-radius: 0;
+  padding: 4px 19px;
   text-decoration: none;
-  transition: all 0.3s ease;
-  margin-bottom: 2rem;
+  height: 45px;
+  background: var(--text-color);
 }
 
 .create-recipe-link:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 8px 8px 0px var(--text-color), -8px -8px 0px var(--text-color);
+  background: var(--text-color);
   color: var(--primary-color);
 }
 
@@ -200,23 +246,29 @@
 .recipe-action-btn {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: var(--text-color) 2px solid;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: var(--text-color);
-  color: var(--primary-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  background: transparent;
+  color: var(--text-color);
+  border-radius: 0;
 }
 
 .recipe-action-btn:hover {
-  background: var(--secondary-color);
+  box-shadow: 4px 4px 0px var(--text-color), -4px -4px 0px var(--text-color);
+  background: transparent;
   color: var(--primary-color);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-action-btn.edit-btn {
+  background: transparent;
+}
+
+.recipe-action-btn.delete-btn {
+  background: transparent;
 }
 
 .recipe-action-btn i {
