@@ -8,6 +8,17 @@
   --overlay-color: rgb(255 255 255 / 70%);
 }
 
+[data-theme="dark"] {
+  --bg-color: #174042;
+  --primary-color: #174042;
+  --secondary-color: #f5f5f7;
+  --text-color: #fff;
+  --text-color-2: #fff;
+  --text-color-3: #fff;
+  --overlay-color: rgb(0 0 0 / 70%);
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Force scrollbar to always show to prevent layout shifts */
 html {
   overflow-y: scroll;

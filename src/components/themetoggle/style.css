@@ -1,0 +1,28 @@
+.nav_ac {
+  padding: 5px 15px;
+  margin: 0;
+  border: unset;
+  background: transparent;
+  font-size: 1.25rem;
+  color: var(--text-color);
+  line-height: 2;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999;
+  left: 10px;
+  background: var(--primary-color);
+}
+
+.nav_ac svg {
+  width: 1.5em;
+  height: 1.5em;
+  fill: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.nav_ac:hover svg {
+  transform: rotate(45deg);
+}
