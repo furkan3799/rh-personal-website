@@ -15,11 +15,11 @@
   border-radius: 25px;
   text-decoration: none;
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
-  border: 2px solid var(--text-color);
+  margin-bottom: 2rem;
 }
 
 .create-event-link:hover {
+  background: var(--secondary-color);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   color: var(--primary-color);
@@ -63,11 +63,10 @@
   background: var(--text-color);
   color: var(--primary-color);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
 }
 
 .event-action-btn:hover {
-  background: var(--text-color);
+  background: var(--secondary-color);
   color: var(--primary-color);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -154,23 +153,48 @@
 }
 
 .event-button {
-  display: inline-block;
-  padding: 0.8rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   background: var(--text-color);
   color: var(--primary-color);
-  text-decoration: none;
+  padding: 0.8rem 1.5rem;
   border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
-  text-align: center;
-  border: 2px solid var(--text-color);
 }
 
 .event-button:hover {
+  background: var(--secondary-color);
   transform: translateY(-2px);
   color: var(--primary-color);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.edit-event-button,
+.delete-event-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--text-color);
+  color: var(--primary-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.edit-event-button:hover,
+.delete-event-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  color: var(--primary-color);
 }
 
 /* Mobile Styles */

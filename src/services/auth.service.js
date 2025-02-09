@@ -1,13 +1,13 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:3000/api";
+const API_URL = "http://localhost:3000/api" || process.env.REACT_APP_API_URL;
 
 class AuthService {
-  async login(email, password) {
+  async login(username, password) {
     try {
-      const response = await axios.post(`${API_URL}/auth/login`, {
-        email,
+      const response = await axios.post(`${API_URL}/auth`, {
+        username,
         password,
       });
 

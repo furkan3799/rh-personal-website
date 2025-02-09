@@ -9,7 +9,7 @@ import "./style.css";
 export const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
   const [error, setError] = useState("");
@@ -29,7 +29,7 @@ export const Login = () => {
     setLoading(true);
 
     try {
-      await authService.login(formData.email, formData.password);
+      await authService.login(formData.username, formData.password);
       navigate("/"); // Redirect to home page after successful login
     } catch (err) {
       setError(err.response?.data?.message || "Login fehlgeschlagen");
@@ -63,11 +63,11 @@ export const Login = () => {
 
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-4">
-                <Form.Label>Email</Form.Label>
+                <Form.Label>Benutzername</Form.Label>
                 <Form.Control
-                  type="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  name="username"
+                  value={formData.username}
                   onChange={handleChange}
                   required
                 />
