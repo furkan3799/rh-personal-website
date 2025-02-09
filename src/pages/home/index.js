@@ -22,7 +22,7 @@ export const Home = () => {
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center">
           <div className="order-1 order-lg-2 h-100 home-carousel">
-            <Carousel fade interval={3000} pause={false} controls={false}>
+            <Carousel fade interval={3000} pause={false} controls={true}>
               <Carousel.Item>
                 <img
                   className="d-block w-100"

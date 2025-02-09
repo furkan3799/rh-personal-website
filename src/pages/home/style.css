@@ -5,6 +5,7 @@ section {
   -webkit-transition: all 0.5s ease-in;
   -o-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
+  overflow: hidden;
 }
 
 .who_am_I {
@@ -299,12 +300,36 @@ section {
   height: 100%;
   display: flex;
   align-items: center;
+  width: 50%;
+  overflow: hidden;
+}
+
+.home-carousel .carousel {
+  width: 100%;
+}
+
+.home-carousel .carousel,
+.home-carousel .carousel-inner,
+.home-carousel .carousel-item {
+  height: 100%;
+}
+
+.home-carousel .carousel-item {
+  background-color: var(--primary-color);
+}
+
+.home-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 991.98px) {
   .home-carousel {
     height: 50vh;
     min-height: 400px;
+    width: 100%;
     margin: 0;
   }
 
@@ -323,24 +348,6 @@ section {
     font-size: 1.2rem;
     margin: 1rem 0;
   }
-}
-
-.home-carousel .carousel,
-.home-carousel .carousel-inner,
-.home-carousel .carousel-item {
-  height: 100%;
-}
-
-.home-carousel .carousel-item {
-  background-color: var(--primary-color);
-}
-
-.home-carousel .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  aspect-ratio: 4/3;
 }
 
 .home-carousel .carousel-caption {
